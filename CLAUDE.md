@@ -36,9 +36,17 @@ Components live under `components/<Name>/` with three files:
 
 Import via the barrel: `import Navbar from "@/components/Navbar"`.
 
+### Utilities
+
+Standalone utility functions live under `utils/` (e.g., `utils/getInitials.ts`), not inside `components/`.
+
 ### Styling
 
 Tailwind v4 is configured through PostCSS. Design tokens (colors, font) are declared in `app/globals.css` inside `@theme { … }` and are available as Tailwind utilities (`bg-primary`, `text-body`, etc.). Component CSS Modules use `@apply` against those utilities.
+
+`app/globals.css` also defines reusable global CSS classes (`.btn`, `.btn-primary`, `.page-content`, `.center-content`, `.form-title`) that can be used directly in JSX without a CSS Module.
+
+Icons come from `lucide-react` (e.g., `import { Eye, EyeOff } from "lucide-react"`). Client components that use React hooks must include `"use client"` at the top of the file.
 
 ### Testing
 
@@ -47,3 +55,7 @@ Vitest runs in a `jsdom` environment with `globals: true` (no need to import `de
 ### Preview route
 
 `app/(public)/preview/page.tsx` is a sandbox for developing UI components in isolation before wiring them into real pages.
+
+### Project conventions
+
+`_specs/` holds feature specs (created by `/spec`). `_plans/` holds implementation plans. Check these for context before starting work on a feature.
