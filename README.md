@@ -17,3 +17,7 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the app.
+
+## TODO
+
+- [ ] Add oAuth authentication in a future milestone
